@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,12 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="/static/styles.css">
+    <script>
+      (function () {
+        const theme = localStorage.getItem("helix.theme") || "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
   </head>
   <body class="app-shell">
     <div class="grid-backdrop" aria-hidden="true"></div>
@@ -27,90 +33,90 @@
           <div class="rail-actions rail-actions-wide">
             <div class="control-stack">
               <label class="control-pill">
-                <span data-i18n="languageLabel">Language</span>
+                <span data-i18n="languageLabel">Idioma</span>
                 <select id="language-select">
-                  <option value="en">EN</option>
                   <option value="es">ES</option>
+                  <option value="en">EN</option>
                 </select>
               </label>
               <label class="control-pill">
-                <span data-i18n="themeLabel">Theme</span>
+                <span data-i18n="themeLabel">Tema</span>
                 <select id="theme-select">
-                  <option value="light" data-i18n="themeLight">Light</option>
-                  <option value="dark" data-i18n="themeDark">Dark</option>
+                  <option value="light" data-i18n="themeLight">Claro</option>
+                  <option value="dark" data-i18n="themeDark">Oscuro</option>
                 </select>
               </label>
             </div>
-            <a class="micro-link" href="/" data-i18n="backToLanding">Back to Landing</a>
+            <a class="micro-link" href="/" data-i18n="backToLanding">Volver al inicio</a>
             <span class="status-pill status-pill-warm">V0.3.0</span>
           </div>
         </header>
 
         <section class="dashboard-grid">
           <article class="module hero-module">
-            <div class="module-tag" data-i18n="liveSystemTag">Live System</div>
-            <p class="micro-copy" data-i18n="heroMicroCopy">Compressed inference / tools / memory / agent loop</p>
-            <h1 class="hero-title" data-i18n="heroTitle">AGENT LAB</h1>
+            <div class="module-tag" data-i18n="liveSystemTag">Sistema activo</div>
+            <p class="micro-copy" data-i18n="heroMicroCopy">Inferencia comprimida / herramientas / memoria / bucle agentic</p>
+            <h1 class="hero-title" data-i18n="heroTitle">LAB DE AGENTES</h1>
             <p class="hero-copy" data-i18n="heroCopy">
-              A deployable control surface for Helix Proto. Stream chat, run the planner loop, and
-              search persistent knowledge from one modular interface.
+              Una consola desplegable para Helix Proto. Generá texto en stream, ejecutá el loop del agente y
+              consultá conocimiento persistente desde una interfaz modular.
             </p>
           </article>
 
           <article class="module metric-module">
             <div class="metric-label" data-i18n="backendLabel">Backend</div>
-            <div class="metric-value" id="connection-status" data-i18n="checking">Checking</div>
-            <p class="metric-foot" id="workspace-path" data-i18n="waitingHealth">Waiting for health check...</p>
+            <div class="metric-value" id="connection-status" data-i18n="checking">Verificando</div>
+            <p class="metric-foot" id="workspace-path" data-i18n="waitingHealth">Esperando chequeo de salud...</p>
           </article>
 
           <article class="module metric-module">
-            <div class="metric-label" data-i18n="preparedModelsLabel">Prepared Models</div>
+            <div class="metric-label" data-i18n="preparedModelsLabel">Modelos preparados</div>
             <div class="metric-value" id="models-count">00</div>
-            <p class="metric-foot" data-i18n="modelsFoot">Registry discovered from the connected backend.</p>
+            <p class="metric-foot" data-i18n="modelsFoot">Registro detectado desde el backend conectado.</p>
           </article>
 
           <article class="module endpoint-module">
-            <div class="module-tag" data-i18n="apiLinkTag">API Link</div>
-            <label class="endpoint-label" for="api-base" data-i18n="renderBackendLabel">Render backend URL</label>
+            <div class="module-tag" data-i18n="apiLinkTag">Enlace API</div>
+            <label class="endpoint-label" for="api-base" data-i18n="renderBackendLabel">URL del backend en Render</label>
             <div class="endpoint-row">
               <input
                 id="api-base"
                 type="url"
-                placeholder="https://your-backend.onrender.com"
+                placeholder="https://tu-backend.onrender.com"
                 data-i18n-placeholder="apiPlaceholder"
               >
-              <button class="button button-primary" id="api-save" type="button" data-i18n="connectButton">Connect</button>
+              <button class="button button-primary" id="api-save" type="button" data-i18n="connectButton">Conectar</button>
             </div>
             <p class="module-note" data-i18n="apiNote">
-              Saved in this browser. Leave empty to use same-origin mode when the frontend is served by the backend.
+              Se guarda en este navegador. Dejalo vacío si querés usar mismo origen cuando el frontend esté servido por el backend.
             </p>
           </article>
         </section>
 
         <section class="toolbar-row">
           <div class="toolbar-group">
-            <button class="tab-button active" data-tab="chat" type="button" data-i18n="chatTab">Chat Stream</button>
-            <button class="tab-button" data-tab="agent" type="button" data-i18n="agentTab">Agent Run</button>
-            <button class="tab-button" data-tab="knowledge" type="button" data-i18n="knowledgeTab">Knowledge</button>
+            <button class="tab-button active" data-tab="chat" type="button" data-i18n="chatTab">Chat en stream</button>
+            <button class="tab-button" data-tab="agent" type="button" data-i18n="agentTab">Ejecución del agente</button>
+            <button class="tab-button" data-tab="knowledge" type="button" data-i18n="knowledgeTab">Conocimiento</button>
           </div>
           <div class="toolbar-summary">
-            <span class="status-pill" id="api-mode-pill" data-i18n="sameOriginLabel">Same Origin</span>
-            <span class="status-pill" id="model-pill" data-i18n="noModelLoaded">No Model Loaded</span>
+            <span class="status-pill" id="api-mode-pill" data-i18n="sameOriginLabel">Mismo origen</span>
+            <span class="status-pill" id="model-pill" data-i18n="noModelLoaded">Sin modelo cargado</span>
           </div>
         </section>
 
         <section class="panel active" data-panel="chat">
           <div class="work-grid">
             <article class="module form-module">
-              <div class="module-tag" data-i18n="streamTokensTag">Stream Tokens</div>
-              <h2 class="section-title" data-i18n="chatConsoleTitle">Chat Console</h2>
+              <div class="module-tag" data-i18n="streamTokensTag">Stream de tokens</div>
+              <h2 class="section-title" data-i18n="chatConsoleTitle">Consola de chat</h2>
               <form id="chat-form" class="form-grid">
                 <label>
-                  <span data-i18n="modelAliasLabel">Model Alias</span>
+                  <span data-i18n="modelAliasLabel">Alias del modelo</span>
                   <select id="chat-alias"></select>
                 </label>
                 <label>
-                  <span data-i18n="maxNewTokensLabel">Max New Tokens</span>
+                  <span data-i18n="maxNewTokensLabel">Máx. tokens nuevos</span>
                   <input id="chat-max-tokens" type="number" min="1" value="48">
                 </label>
                 <label class="span-2">
@@ -118,19 +124,19 @@
                   <textarea
                     id="chat-prompt"
                     rows="7"
-                    placeholder="Ask the local worker model something useful..."
+                    placeholder="Pedile algo útil al modelo local..."
                     data-i18n-placeholder="chatPromptPlaceholder"
                   ></textarea>
                 </label>
                 <div class="actions span-2">
-                  <button class="button button-primary" type="submit" data-i18n="startStreamButton">Start Stream</button>
+                  <button class="button button-primary" type="submit" data-i18n="startStreamButton">Iniciar stream</button>
                 </div>
               </form>
             </article>
 
             <article class="module output-module">
-              <div class="module-tag" data-i18n="liveOutputTag">Live Output</div>
-              <div class="console-meta" id="chat-meta" data-i18n="idle">Idle</div>
+              <div class="module-tag" data-i18n="liveOutputTag">Salida en vivo</div>
+              <div class="console-meta" id="chat-meta" data-i18n="idle">En espera</div>
               <pre id="chat-output" class="console-output"></pre>
             </article>
           </div>
@@ -139,37 +145,37 @@
         <section class="panel" data-panel="agent">
           <div class="work-grid">
             <article class="module form-module">
-              <div class="module-tag" data-i18n="plannerLoopTag">Planner Loop</div>
-              <h2 class="section-title" data-i18n="agentControlTitle">Agent Control</h2>
+              <div class="module-tag" data-i18n="plannerLoopTag">Loop del planner</div>
+              <h2 class="section-title" data-i18n="agentControlTitle">Control del agente</h2>
               <form id="agent-form" class="form-grid">
                 <label>
-                  <span data-i18n="agentNameLabel">Agent Name</span>
+                  <span data-i18n="agentNameLabel">Nombre del agente</span>
                   <input id="agent-name" value="helix-mail">
                 </label>
                 <label>
-                  <span data-i18n="defaultModelAliasLabel">Default Model Alias</span>
+                  <span data-i18n="defaultModelAliasLabel">Alias de modelo por defecto</span>
                   <select id="agent-model-alias">
-                    <option value="" data-i18n="noneOption">None</option>
+                    <option value="" data-i18n="noneOption">Ninguno</option>
                   </select>
                 </label>
                 <label class="span-2">
-                  <span data-i18n="goalLabel">Goal</span>
+                  <span data-i18n="goalLabel">Objetivo</span>
                   <textarea
                     id="agent-goal"
                     rows="7"
-                    placeholder="Ask for a summary, a retrieval pass, or a tool-backed task..."
+                    placeholder="Pedí un resumen, una búsqueda o una tarea con herramientas..."
                     data-i18n-placeholder="agentGoalPlaceholder"
                   ></textarea>
                 </label>
                 <div class="actions span-2">
-                  <button class="button button-primary" type="submit" data-i18n="runAgentButton">Run Agent</button>
+                  <button class="button button-primary" type="submit" data-i18n="runAgentButton">Ejecutar agente</button>
                 </div>
               </form>
             </article>
 
             <article class="module output-module">
-              <div class="module-tag" data-i18n="traceFeedTag">Trace Feed</div>
-              <div class="console-meta" id="agent-meta" data-i18n="idle">Idle</div>
+              <div class="module-tag" data-i18n="traceFeedTag">Feed de trazas</div>
+              <div class="console-meta" id="agent-meta" data-i18n="idle">En espera</div>
               <pre id="agent-output" class="console-output"></pre>
             </article>
           </div>
@@ -178,38 +184,38 @@
         <section class="panel" data-panel="knowledge">
           <div class="knowledge-grid">
             <article class="module form-module">
-              <div class="module-tag" data-i18n="ingestTag">Ingest</div>
-              <h2 class="section-title" data-i18n="addKnowledgeTitle">Add Knowledge</h2>
+              <div class="module-tag" data-i18n="ingestTag">Ingesta</div>
+              <h2 class="section-title" data-i18n="addKnowledgeTitle">Agregar conocimiento</h2>
               <form id="knowledge-add-form" class="form-grid">
                 <label>
-                  <span data-i18n="agentNameLabel">Agent Name</span>
+                  <span data-i18n="agentNameLabel">Nombre del agente</span>
                   <input id="knowledge-agent" value="helix-mail">
                 </label>
                 <label>
-                  <span data-i18n="sourceLabel">Source</span>
+                  <span data-i18n="sourceLabel">Fuente</span>
                   <input id="knowledge-source" value="web-note">
                 </label>
                 <label class="span-2">
-                  <span data-i18n="textLabel">Text</span>
+                  <span data-i18n="textLabel">Texto</span>
                   <textarea
                     id="knowledge-text"
                     rows="7"
-                    placeholder="Paste strategy notes, legal clauses, or product context..."
+                    placeholder="Pegá notas estratégicas, cláusulas legales o contexto del producto..."
                     data-i18n-placeholder="knowledgeTextPlaceholder"
                   ></textarea>
                 </label>
                 <div class="actions span-2">
-                  <button class="button button-primary" type="submit" data-i18n="saveChunkButton">Save Chunk</button>
+                  <button class="button button-primary" type="submit" data-i18n="saveChunkButton">Guardar bloque</button>
                 </div>
               </form>
             </article>
 
             <article class="module form-module">
-              <div class="module-tag" data-i18n="recallTag">Recall</div>
-              <h2 class="section-title" data-i18n="searchKnowledgeTitle">Search Knowledge</h2>
+              <div class="module-tag" data-i18n="recallTag">Recuperación</div>
+              <h2 class="section-title" data-i18n="searchKnowledgeTitle">Buscar conocimiento</h2>
               <form id="knowledge-search-form" class="form-grid">
                 <label>
-                  <span data-i18n="agentNameLabel">Agent Name</span>
+                  <span data-i18n="agentNameLabel">Nombre del agente</span>
                   <input id="knowledge-search-agent" value="helix-mail">
                 </label>
                 <label>
@@ -217,22 +223,22 @@
                   <input id="knowledge-top-k" type="number" min="1" value="4">
                 </label>
                 <label class="span-2">
-                  <span data-i18n="searchQueryLabel">Search Query</span>
+                  <span data-i18n="searchQueryLabel">Consulta</span>
                   <input
                     id="knowledge-query"
-                    placeholder="Search the persistent knowledge base"
+                    placeholder="Buscá en la base persistente de conocimiento"
                     data-i18n-placeholder="knowledgeQueryPlaceholder"
                   >
                 </label>
                 <div class="actions span-2">
-                  <button class="button button-primary" type="submit" data-i18n="searchButton">Search</button>
+                  <button class="button button-primary" type="submit" data-i18n="searchButton">Buscar</button>
                 </div>
               </form>
             </article>
 
             <article class="module output-module knowledge-output-module">
-              <div class="module-tag" data-i18n="resultSetTag">Result Set</div>
-              <div class="console-meta" id="knowledge-meta" data-i18n="idle">Idle</div>
+              <div class="module-tag" data-i18n="resultSetTag">Resultados</div>
+              <div class="console-meta" id="knowledge-meta" data-i18n="idle">En espera</div>
               <pre id="knowledge-output" class="console-output"></pre>
             </article>
           </div>

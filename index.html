@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,12 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="/static/styles.css">
+    <script>
+      (function () {
+        const theme = localStorage.getItem("helix.theme") || "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
   </head>
   <body class="landing-shell">
     <div class="grid-backdrop" aria-hidden="true"></div>
@@ -21,71 +27,71 @@
             <span class="brand-mark">H</span>
             <span>
               <strong>HELIX_PROTO</strong>
-              <small>compressed runtime / agent layer</small>
+              <small>runtime comprimido / capa agentic</small>
             </span>
           </div>
           <div class="rail-actions">
             <a class="micro-link" href="https://github.com/pat031-prog/helix-web">GitHub</a>
-            <a class="button button-primary button-compact" href="/app">Open App</a>
+            <a class="button button-primary button-compact" href="/app">Abrir app</a>
           </div>
         </header>
 
         <section class="landing-grid">
           <article class="module landing-hero">
-            <div class="module-tag">System Overview</div>
-            <p class="micro-copy">From block-compressed tensors to deployable agent workflows</p>
+            <div class="module-tag">Visión general</div>
+            <p class="micro-copy">De tensores comprimidos a flujos agentic desplegables</p>
             <h1 class="hero-title hero-title-large">HELIX FIELD</h1>
             <p class="hero-copy">
-              A single stack for compressed inference, persistent sessions, tool calling, knowledge ingestion,
-              streaming chat, and agent traces. Built to feel like a lab, not a dashboard template.
+              Una sola pila para inferencia comprimida, sesiones persistidas, tools, ingesta de conocimiento,
+              chat en streaming y trazas de agente. Diseñada para sentirse como un laboratorio, no como un dashboard genérico.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="/app">Launch Operator Console</a>
-              <a class="button button-secondary" href="https://github.com/pat031-prog/helix-web">Inspect Repository</a>
+              <a class="button button-primary" href="/app">Lanzar consola operativa</a>
+              <a class="button button-secondary" href="https://github.com/pat031-prog/helix-web">Ver repositorio</a>
             </div>
           </article>
 
           <article class="module summary-module">
-            <div class="metric-label">Current Shape</div>
+            <div class="metric-label">Forma actual</div>
             <ul class="summary-list">
-              <li>Compressed tensor format with block integrity</li>
-              <li>HF export path and GPT/BERT validation</li>
-              <li>KV cache, sessions, and runtime caching</li>
-              <li>Tool registry, memory, RAG, and traces</li>
-              <li>REST API plus browser UI and SSE</li>
+              <li>Formato comprimido por bloques con integridad</li>
+              <li>Ruta Hugging Face y validación GPT/BERT</li>
+              <li>KV cache, sesiones y caching de runtime</li>
+              <li>Registro de tools, memoria, RAG y trazas</li>
+              <li>API REST con interfaz web y SSE</li>
             </ul>
           </article>
 
           <article class="module stat-strip">
             <div>
               <span class="metric-value metric-inline">16</span>
-              <span class="metric-foot">tests passing in the current local suite</span>
+              <span class="metric-foot">tests pasando en la suite local actual</span>
             </div>
             <div>
               <span class="metric-value metric-inline">2</span>
-              <span class="metric-foot">deploy targets from one GitHub repo</span>
+              <span class="metric-foot">destinos de deploy saliendo de GitHub</span>
             </div>
             <div>
               <span class="metric-value metric-inline">0.3.0</span>
-              <span class="metric-foot">agent-ready product snapshot</span>
+              <span class="metric-foot">snapshot productivo con capa agentic</span>
             </div>
           </article>
 
           <article class="module card-cluster">
             <div class="mini-card">
               <span class="module-tag">Runtime</span>
-              <h2>Worker Engine</h2>
-              <p>Streaming generation, tokenizer-aware prompts, session resume, and cached tensor access.</p>
+              <h2>Motor worker</h2>
+              <p>Generación en streaming, prompts con tokenizer, reanudación de sesión y acceso cacheado a tensores.</p>
             </div>
             <div class="mini-card">
-              <span class="module-tag">Agent</span>
-              <h2>Loop + Memory</h2>
-              <p>Plan, tool, observation, final. Episodic memory, knowledge chunks, and run traces included.</p>
+              <span class="module-tag">Agente</span>
+              <h2>Loop + memoria</h2>
+              <p>Plan, tool, observación, final. Memoria episódica, chunks de conocimiento y trazas por corrida.</p>
             </div>
             <div class="mini-card">
               <span class="module-tag">Deploy</span>
               <h2>Vercel + Render</h2>
-              <p>Frontend can live on Vercel while the Python runtime and workspace stay on Render.</p>
+              <p>El frontend puede vivir en Vercel mientras el runtime Python y el workspace corren en Render.</p>
             </div>
           </article>
         </section>

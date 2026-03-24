@@ -1,61 +1,143 @@
 const translations = {
+  es: {
+    brandSubtitle: "runtime comprimido + laboratorio de agentes",
+    languageLabel: "Idioma",
+    themeLabel: "Tema",
+    themeLight: "Claro",
+    themeDark: "Oscuro",
+    backToLanding: "Volver al inicio",
+    liveSystemTag: "Sistema activo",
+    heroMicroCopy: "Inferencia comprimida / herramientas / memoria / bucle agentic",
+    heroTitle: "LAB DE AGENTES",
+    heroCopy:
+      "Una consola desplegable para Helix Proto. Generá texto en stream, ejecutá el loop del agente y consultá conocimiento persistente desde una interfaz modular.",
+    backendLabel: "Backend",
+    preparedModelsLabel: "Modelos preparados",
+    modelsFoot: "Registro detectado desde el backend conectado.",
+    apiLinkTag: "Enlace API",
+    renderBackendLabel: "URL del backend en Render",
+    apiPlaceholder: "https://tu-backend.onrender.com",
+    connectButton: "Conectar",
+    apiNote:
+      "Se guarda en este navegador. Dejalo vacío si querés usar mismo origen cuando el frontend esté servido por el backend.",
+    chatTab: "Chat en stream",
+    agentTab: "Ejecución del agente",
+    knowledgeTab: "Conocimiento",
+    sameOriginLabel: "Mismo origen",
+    noModelLoaded: "Sin modelo cargado",
+    streamTokensTag: "Stream de tokens",
+    chatConsoleTitle: "Consola de chat",
+    modelAliasLabel: "Alias del modelo",
+    maxNewTokensLabel: "Máx. tokens nuevos",
+    promptLabel: "Prompt",
+    chatPromptPlaceholder: "Pedile algo útil al modelo local...",
+    startStreamButton: "Iniciar stream",
+    liveOutputTag: "Salida en vivo",
+    idle: "En espera",
+    plannerLoopTag: "Loop del planner",
+    agentControlTitle: "Control del agente",
+    agentNameLabel: "Nombre del agente",
+    defaultModelAliasLabel: "Alias de modelo por defecto",
+    noneOption: "Ninguno",
+    goalLabel: "Objetivo",
+    agentGoalPlaceholder: "Pedí un resumen, una búsqueda o una tarea con herramientas...",
+    runAgentButton: "Ejecutar agente",
+    traceFeedTag: "Feed de trazas",
+    ingestTag: "Ingesta",
+    addKnowledgeTitle: "Agregar conocimiento",
+    sourceLabel: "Fuente",
+    textLabel: "Texto",
+    knowledgeTextPlaceholder: "Pegá notas estratégicas, cláusulas legales o contexto del producto...",
+    saveChunkButton: "Guardar bloque",
+    recallTag: "Recuperación",
+    searchKnowledgeTitle: "Buscar conocimiento",
+    topKLabel: "Top K",
+    searchQueryLabel: "Consulta",
+    knowledgeQueryPlaceholder: "Buscá en la base persistente de conocimiento",
+    searchButton: "Buscar",
+    resultSetTag: "Resultados",
+    checking: "Verificando",
+    waitingHealth: "Esperando chequeo de salud...",
+    online: "En línea",
+    workspaceAvailable: "Workspace disponible",
+    offline: "Sin conexión",
+    connectingToBackend: "Conectando con el backend...",
+    backendErrorPrefix: "Error del backend",
+    remoteApiPrefix: "API remota",
+    primaryPrefix: "Principal",
+    transient: "transitoria",
+    streaming: "Streameando",
+    sessionLabel: "Sesión",
+    done: "Listo",
+    error: "Error",
+    running: "Ejecutando",
+    traceLabel: "Traza",
+    saving: "Guardando",
+    knowledgeChunkStored: "Bloque de conocimiento guardado",
+    searching: "Buscando",
+    hits: "resultados",
+    planLabel: "plan",
+    toolLabel: "herramienta",
+    resultLabel: "resultado",
+    finalLabel: "respuesta final",
+  },
   en: {
-    brandSubtitle: "worker runtime + agent lab",
+    brandSubtitle: "compressed runtime + agent lab",
     languageLabel: "Language",
     themeLabel: "Theme",
     themeLight: "Light",
     themeDark: "Dark",
-    backToLanding: "Back to Landing",
-    liveSystemTag: "Live System",
+    backToLanding: "Back to Home",
+    liveSystemTag: "Live system",
     heroMicroCopy: "Compressed inference / tools / memory / agent loop",
     heroTitle: "AGENT LAB",
     heroCopy:
-      "A deployable control surface for Helix Proto. Stream chat, run the planner loop, and search persistent knowledge from one modular interface.",
+      "A deployable console for Helix Proto. Stream text, run the agent loop, and search persistent knowledge from one modular interface.",
     backendLabel: "Backend",
-    preparedModelsLabel: "Prepared Models",
+    preparedModelsLabel: "Prepared models",
     modelsFoot: "Registry discovered from the connected backend.",
     apiLinkTag: "API Link",
     renderBackendLabel: "Render backend URL",
     apiPlaceholder: "https://your-backend.onrender.com",
     connectButton: "Connect",
     apiNote:
-      "Saved in this browser. Leave empty to use same-origin mode when the frontend is served by the backend.",
-    chatTab: "Chat Stream",
-    agentTab: "Agent Run",
+      "Saved in this browser. Leave it empty to use same-origin mode when the frontend is served by the backend.",
+    chatTab: "Chat stream",
+    agentTab: "Agent run",
     knowledgeTab: "Knowledge",
-    sameOriginLabel: "Same Origin",
-    noModelLoaded: "No Model Loaded",
-    streamTokensTag: "Stream Tokens",
-    chatConsoleTitle: "Chat Console",
-    modelAliasLabel: "Model Alias",
-    maxNewTokensLabel: "Max New Tokens",
+    sameOriginLabel: "Same origin",
+    noModelLoaded: "No model loaded",
+    streamTokensTag: "Token stream",
+    chatConsoleTitle: "Chat console",
+    modelAliasLabel: "Model alias",
+    maxNewTokensLabel: "Max new tokens",
     promptLabel: "Prompt",
-    chatPromptPlaceholder: "Ask the local worker model something useful...",
-    startStreamButton: "Start Stream",
-    liveOutputTag: "Live Output",
+    chatPromptPlaceholder: "Ask the local model something useful...",
+    startStreamButton: "Start stream",
+    liveOutputTag: "Live output",
     idle: "Idle",
-    plannerLoopTag: "Planner Loop",
-    agentControlTitle: "Agent Control",
-    agentNameLabel: "Agent Name",
-    defaultModelAliasLabel: "Default Model Alias",
+    plannerLoopTag: "Planner loop",
+    agentControlTitle: "Agent control",
+    agentNameLabel: "Agent name",
+    defaultModelAliasLabel: "Default model alias",
     noneOption: "None",
     goalLabel: "Goal",
-    agentGoalPlaceholder: "Ask for a summary, a retrieval pass, or a tool-backed task...",
-    runAgentButton: "Run Agent",
-    traceFeedTag: "Trace Feed",
+    agentGoalPlaceholder: "Ask for a summary, retrieval, or a tool-backed task...",
+    runAgentButton: "Run agent",
+    traceFeedTag: "Trace feed",
     ingestTag: "Ingest",
-    addKnowledgeTitle: "Add Knowledge",
+    addKnowledgeTitle: "Add knowledge",
     sourceLabel: "Source",
     textLabel: "Text",
     knowledgeTextPlaceholder: "Paste strategy notes, legal clauses, or product context...",
-    saveChunkButton: "Save Chunk",
+    saveChunkButton: "Save chunk",
     recallTag: "Recall",
-    searchKnowledgeTitle: "Search Knowledge",
+    searchKnowledgeTitle: "Search knowledge",
     topKLabel: "Top K",
-    searchQueryLabel: "Search Query",
+    searchQueryLabel: "Query",
     knowledgeQueryPlaceholder: "Search the persistent knowledge base",
     searchButton: "Search",
-    resultSetTag: "Result Set",
+    resultSetTag: "Result set",
     checking: "Checking",
     waitingHealth: "Waiting for health check...",
     online: "Online",
@@ -76,84 +158,10 @@ const translations = {
     knowledgeChunkStored: "Knowledge chunk stored",
     searching: "Searching",
     hits: "hits",
-  },
-  es: {
-    brandSubtitle: "runtime worker + laboratorio agentic",
-    languageLabel: "Idioma",
-    themeLabel: "Tema",
-    themeLight: "Claro",
-    themeDark: "Oscuro",
-    backToLanding: "Volver al inicio",
-    liveSystemTag: "Sistema Vivo",
-    heroMicroCopy: "Inferencia comprimida / tools / memoria / loop agentic",
-    heroTitle: "LAB DE AGENTES",
-    heroCopy:
-      "Una superficie desplegable para Helix Proto. Streamea chat, ejecuta el loop del agente y consulta conocimiento persistente desde una sola interfaz modular.",
-    backendLabel: "Backend",
-    preparedModelsLabel: "Modelos preparados",
-    modelsFoot: "Registry detectado desde el backend conectado.",
-    apiLinkTag: "Enlace API",
-    renderBackendLabel: "URL del backend en Render",
-    apiPlaceholder: "https://tu-backend.onrender.com",
-    connectButton: "Conectar",
-    apiNote:
-      "Se guarda en este navegador. Dejalo vacío para usar mismo origen cuando el frontend esté servido por el backend.",
-    chatTab: "Chat en stream",
-    agentTab: "Ejecución del agente",
-    knowledgeTab: "Conocimiento",
-    sameOriginLabel: "Mismo origen",
-    noModelLoaded: "Sin modelo cargado",
-    streamTokensTag: "Stream de tokens",
-    chatConsoleTitle: "Consola de chat",
-    modelAliasLabel: "Alias del modelo",
-    maxNewTokensLabel: "Máx. tokens nuevos",
-    promptLabel: "Prompt",
-    chatPromptPlaceholder: "Pedile algo útil al modelo worker local...",
-    startStreamButton: "Iniciar stream",
-    liveOutputTag: "Salida en vivo",
-    idle: "En espera",
-    plannerLoopTag: "Loop del planner",
-    agentControlTitle: "Control del agente",
-    agentNameLabel: "Nombre del agente",
-    defaultModelAliasLabel: "Alias por defecto del modelo",
-    noneOption: "Ninguno",
-    goalLabel: "Objetivo",
-    agentGoalPlaceholder: "Pedí un resumen, una búsqueda o una tarea con tools...",
-    runAgentButton: "Ejecutar agente",
-    traceFeedTag: "Feed de trazas",
-    ingestTag: "Ingesta",
-    addKnowledgeTitle: "Agregar conocimiento",
-    sourceLabel: "Fuente",
-    textLabel: "Texto",
-    knowledgeTextPlaceholder: "Pegá notas estratégicas, cláusulas legales o contexto del producto...",
-    saveChunkButton: "Guardar bloque",
-    recallTag: "Recuperación",
-    searchKnowledgeTitle: "Buscar conocimiento",
-    topKLabel: "Top K",
-    searchQueryLabel: "Consulta de búsqueda",
-    knowledgeQueryPlaceholder: "Buscá en la base persistente de conocimiento",
-    searchButton: "Buscar",
-    resultSetTag: "Resultados",
-    checking: "Verificando",
-    waitingHealth: "Esperando chequeo de salud...",
-    online: "En línea",
-    workspaceAvailable: "Workspace disponible",
-    offline: "Fuera de línea",
-    connectingToBackend: "Conectando con el backend...",
-    backendErrorPrefix: "Error del backend",
-    remoteApiPrefix: "API remota",
-    primaryPrefix: "Principal",
-    transient: "transitorio",
-    streaming: "Streameando",
-    sessionLabel: "Sesión",
-    done: "Listo",
-    error: "Error",
-    running: "Ejecutando",
-    traceLabel: "Traza",
-    saving: "Guardando",
-    knowledgeChunkStored: "Bloque de conocimiento guardado",
-    searching: "Buscando",
-    hits: "resultados",
+    planLabel: "plan",
+    toolLabel: "tool",
+    resultLabel: "result",
+    finalLabel: "final answer",
   },
 };
 
@@ -169,25 +177,25 @@ function initialLanguage() {
   const params = new URLSearchParams(window.location.search);
   const queryValue = params.get("lang");
   const storedValue = window.localStorage.getItem("helix.language");
-  return translations[queryValue] ? queryValue : translations[storedValue] ? storedValue : "en";
+  if (translations[queryValue]) return queryValue;
+  if (translations[storedValue]) return storedValue;
+  return "es";
 }
 
 function initialTheme() {
   const params = new URLSearchParams(window.location.search);
   const queryValue = params.get("theme");
   const storedValue = window.localStorage.getItem("helix.theme");
-  return queryValue === "dark" || queryValue === "light"
-    ? queryValue
-    : storedValue === "dark" || storedValue === "light"
-      ? storedValue
-      : "light";
+  if (queryValue === "dark" || queryValue === "light") return queryValue;
+  if (storedValue === "dark" || storedValue === "light") return storedValue;
+  return "light";
 }
 
 let currentLanguage = initialLanguage();
 let currentTheme = initialTheme();
 
 function t(key) {
-  return translations[currentLanguage][key] || translations.en[key] || key;
+  return translations[currentLanguage][key] || translations.es[key] || key;
 }
 
 function applyTranslations() {
@@ -195,12 +203,7 @@ function applyTranslations() {
 
   for (const element of document.querySelectorAll("[data-i18n]")) {
     const key = element.dataset.i18n;
-    const text = t(key);
-    if (element.tagName === "OPTION") {
-      element.textContent = text;
-    } else {
-      element.textContent = text;
-    }
+    element.textContent = t(key);
   }
 
   for (const element of document.querySelectorAll("[data-i18n-placeholder]")) {
@@ -253,15 +256,11 @@ let apiBaseUrl = initialApiBase();
 
 function updateApiModePill() {
   const label = apiBaseUrl ? `${t("remoteApiPrefix")} ${apiBaseUrl}` : t("sameOriginLabel");
-  if (apiModePill) {
-    apiModePill.textContent = label;
-  }
+  if (apiModePill) apiModePill.textContent = label;
 }
 
 function buildUrl(path) {
-  if (!apiBaseUrl) {
-    return path;
-  }
+  if (!apiBaseUrl) return path;
   return `${apiBaseUrl}${path}`;
 }
 
@@ -280,7 +279,7 @@ async function fetchJson(path, options = {}) {
   let payload = {};
   try {
     payload = await response.json();
-  } catch (error) {
+  } catch {
     payload = {};
   }
   if (!response.ok) {
@@ -305,10 +304,10 @@ async function loadModels() {
     const keepEmpty = select.id === "agent-model-alias";
     select.innerHTML = "";
     if (keepEmpty) {
-      const emptyOption = document.createElement("option");
-      emptyOption.value = "";
-      emptyOption.textContent = t("noneOption");
-      select.appendChild(emptyOption);
+      const option = document.createElement("option");
+      option.value = "";
+      option.textContent = t("noneOption");
+      select.appendChild(option);
     }
     for (const alias of aliases) {
       const option = document.createElement("option");
@@ -326,8 +325,6 @@ async function loadModels() {
   if (modelPill) {
     modelPill.textContent = aliases[0] ? `${t("primaryPrefix")} ${aliases[0]}` : t("noModelLoaded");
   }
-
-  return aliases;
 }
 
 async function refreshHealthAndModels() {
@@ -340,9 +337,7 @@ async function refreshHealthAndModels() {
     setText("connection-status", t("offline"));
     setText("workspace-path", error.message);
     setText("models-count", "00");
-    if (modelPill) {
-      modelPill.textContent = t("noModelLoaded");
-    }
+    if (modelPill) modelPill.textContent = t("noModelLoaded");
     throw error;
   }
 }
@@ -359,7 +354,7 @@ async function postSSE(path, payload, onEvent) {
     try {
       const errorPayload = await response.json();
       errorText = errorPayload.error || "";
-    } catch (error) {
+    } catch {
       errorText = await response.text();
     }
     throw new Error(errorText || `HTTP ${response.status}`);
@@ -431,12 +426,12 @@ document.getElementById("chat-form")?.addEventListener("submit", async (event) =
           setText("chat-output", payload.generated_text || "");
           setText("chat-meta", `${t("done")} / ${t("sessionLabel")} ${payload.session_id || t("transient")}`);
         } else if (name === "error") {
-          setText("chat-meta", `${t("error")} ${payload.error}`);
+          setText("chat-meta", `${t("error")}: ${payload.error}`);
         }
       }
     );
   } catch (error) {
-    setText("chat-meta", `${t("error")} ${error.message}`);
+    setText("chat-meta", `${t("error")}: ${error.message}`);
   }
 });
 
@@ -461,24 +456,24 @@ document.getElementById("agent-form")?.addEventListener("submit", async (event) 
       (name, payload) => {
         const current = document.getElementById("agent-output").textContent;
         if (name === "plan") {
-          setText("agent-output", `${current}\n[plan:${payload.planner}] ${payload.thought}\n`);
+          setText("agent-output", `${current}\n[${t("planLabel")}:${payload.planner}] ${payload.thought}\n`);
         } else if (name === "tool_call") {
-          setText("agent-output", `${current}[tool] ${payload.tool_name} ${JSON.stringify(payload.arguments)}\n`);
+          setText("agent-output", `${current}[${t("toolLabel")}] ${payload.tool_name} ${JSON.stringify(payload.arguments)}\n`);
         } else if (name === "tool_result") {
-          setText("agent-output", `${current}[result] ${JSON.stringify(payload.result, null, 2)}\n`);
+          setText("agent-output", `${current}[${t("resultLabel")}] ${JSON.stringify(payload.result, null, 2)}\n`);
         } else if (name === "tool_stream" && payload.payload?.event === "token") {
           setText("agent-output", `${current}${payload.payload.token_text || ""}`);
         } else if (name === "final") {
-          setText("agent-output", `${current}\n[final]\n${payload.final_answer}\n`);
+          setText("agent-output", `${current}\n[${t("finalLabel")}]\n${payload.final_answer}\n`);
         } else if (name === "done") {
           setText("agent-meta", `${t("done")} / ${t("traceLabel")} ${payload.trace_path}`);
         } else if (name === "error") {
-          setText("agent-meta", `${t("error")} ${payload.error}`);
+          setText("agent-meta", `${t("error")}: ${payload.error}`);
         }
       }
     );
   } catch (error) {
-    setText("agent-meta", `${t("error")} ${error.message}`);
+    setText("agent-meta", `${t("error")}: ${error.message}`);
   }
 });
 
@@ -499,7 +494,7 @@ document.getElementById("knowledge-add-form")?.addEventListener("submit", async 
     setText("knowledge-meta", t("knowledgeChunkStored"));
     setText("knowledge-output", JSON.stringify(payload, null, 2));
   } catch (error) {
-    setText("knowledge-meta", `${t("error")} ${error.message}`);
+    setText("knowledge-meta", `${t("error")}: ${error.message}`);
   }
 });
 
@@ -518,7 +513,7 @@ document.getElementById("knowledge-search-form")?.addEventListener("submit", asy
     setText("knowledge-meta", `${(payload.results || []).length} ${t("hits")}`);
     setText("knowledge-output", JSON.stringify(payload, null, 2));
   } catch (error) {
-    setText("knowledge-meta", `${t("error")} ${error.message}`);
+    setText("knowledge-meta", `${t("error")}: ${error.message}`);
   }
 });
 
@@ -540,13 +535,8 @@ themeSelect?.addEventListener("change", (event) => {
   applyTheme();
 });
 
-if (languageSelect) {
-  languageSelect.value = currentLanguage;
-}
-
-if (themeSelect) {
-  themeSelect.value = currentTheme;
-}
+if (languageSelect) languageSelect.value = currentLanguage;
+if (themeSelect) themeSelect.value = currentTheme;
 
 applyTranslations();
 applyTheme();

@@ -1,8 +1,14 @@
 :root {
   --bg: #e8e5df;
   --bg-soft: #f4f1eb;
+  --frame-surface: rgba(246, 243, 238, 0.9);
+  --rail-bg: rgba(255, 253, 248, 0.92);
   --panel: rgba(250, 248, 243, 0.94);
   --panel-strong: #fffdf8;
+  --card-soft: rgba(255, 255, 255, 0.66);
+  --pill-bg: rgba(255, 255, 255, 0.72);
+  --control-bg: rgba(255, 255, 255, 0.66);
+  --input-bg: rgba(255, 255, 255, 0.82);
   --ink: #141414;
   --muted: #5f5f59;
   --line: rgba(20, 20, 20, 0.18);
@@ -23,24 +29,30 @@
 }
 
 html[data-theme="dark"] {
-  --bg: #101416;
-  --bg-soft: #161c1f;
-  --panel: rgba(20, 25, 28, 0.94);
-  --panel-strong: #1a2124;
-  --ink: #eef3f4;
-  --muted: #9ca8ae;
-  --line: rgba(238, 243, 244, 0.16);
-  --line-strong: rgba(238, 243, 244, 0.82);
-  --accent: #ff7f2a;
-  --accent-soft: rgba(255, 127, 42, 0.2);
-  --shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
-  --grid-line: rgba(238, 243, 244, 0.08);
-  --frame-grid-line: rgba(238, 243, 244, 0.1);
-  --spot-a: rgba(255, 255, 255, 0.08);
-  --spot-b: rgba(255, 127, 42, 0.14);
-  --spot-c: rgba(255, 255, 255, 0.05);
-  --console-bg: linear-gradient(180deg, rgba(7, 10, 12, 0.98), rgba(14, 18, 20, 0.96));
-  --console-ink: #f1f6f7;
+  --bg: #0d1012;
+  --bg-soft: #151a1d;
+  --frame-surface: rgba(18, 23, 26, 0.92);
+  --rail-bg: rgba(18, 23, 26, 0.88);
+  --panel: rgba(21, 27, 31, 0.94);
+  --panel-strong: #1b2226;
+  --card-soft: rgba(24, 30, 34, 0.88);
+  --pill-bg: rgba(24, 30, 34, 0.88);
+  --control-bg: rgba(24, 30, 34, 0.9);
+  --input-bg: rgba(14, 18, 20, 0.96);
+  --ink: #eef1ea;
+  --muted: #a7aea3;
+  --line: rgba(238, 241, 234, 0.12);
+  --line-strong: rgba(238, 241, 234, 0.52);
+  --accent: #ff8a34;
+  --accent-soft: rgba(255, 138, 52, 0.16);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+  --grid-line: rgba(238, 241, 234, 0.05);
+  --frame-grid-line: rgba(238, 241, 234, 0.07);
+  --spot-a: rgba(255, 255, 255, 0.05);
+  --spot-b: rgba(255, 138, 52, 0.08);
+  --spot-c: rgba(255, 255, 255, 0.03);
+  --console-bg: linear-gradient(180deg, rgba(8, 10, 12, 0.98), rgba(14, 16, 18, 0.98));
+  --console-ink: #f3f4ef;
 }
 
 * {
@@ -94,8 +106,8 @@ a {
 
 .frame-panel {
   position: relative;
-  background: rgba(246, 243, 238, 0.9);
-  border: 6px solid rgba(20, 20, 20, 0.8);
+  background: var(--frame-surface);
+  border: 6px solid var(--line-strong);
   border-radius: 28px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -127,7 +139,7 @@ a {
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: rgba(255, 253, 248, 0.92);
+  background: var(--rail-bg);
 }
 
 .brand-lockup {
@@ -189,7 +201,7 @@ a {
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.66);
+  background: var(--control-bg);
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -255,7 +267,7 @@ a {
   padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--pill-bg);
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -420,7 +432,7 @@ a {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.66);
+  background: var(--card-soft);
 }
 
 .mini-card h2,
@@ -439,7 +451,7 @@ a {
   padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.68);
+  background: var(--card-soft);
 }
 
 .toolbar-summary {
@@ -532,7 +544,7 @@ textarea {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--input-bg);
   color: var(--ink);
   font: 400 0.92rem/1.5 "IBM Plex Mono", monospace;
 }
@@ -622,6 +634,10 @@ textarea {
 
   .control-stack {
     width: 100%;
+  }
+
+  .rail-actions-wide {
+    justify-content: flex-start;
   }
 
   .form-grid {
