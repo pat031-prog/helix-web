@@ -13,6 +13,34 @@
   --radius-lg: 34px;
   --radius-md: 22px;
   --radius-sm: 16px;
+  --grid-line: rgba(20, 20, 20, 0.09);
+  --frame-grid-line: rgba(20, 20, 20, 0.12);
+  --spot-a: rgba(255, 255, 255, 0.72);
+  --spot-b: rgba(249, 115, 22, 0.16);
+  --spot-c: rgba(20, 20, 20, 0.08);
+  --console-bg: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(35, 35, 35, 0.96));
+  --console-ink: #f7f2e9;
+}
+
+html[data-theme="dark"] {
+  --bg: #101416;
+  --bg-soft: #161c1f;
+  --panel: rgba(20, 25, 28, 0.94);
+  --panel-strong: #1a2124;
+  --ink: #eef3f4;
+  --muted: #9ca8ae;
+  --line: rgba(238, 243, 244, 0.16);
+  --line-strong: rgba(238, 243, 244, 0.82);
+  --accent: #ff7f2a;
+  --accent-soft: rgba(255, 127, 42, 0.2);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+  --grid-line: rgba(238, 243, 244, 0.08);
+  --frame-grid-line: rgba(238, 243, 244, 0.1);
+  --spot-a: rgba(255, 255, 255, 0.08);
+  --spot-b: rgba(255, 127, 42, 0.14);
+  --spot-c: rgba(255, 255, 255, 0.05);
+  --console-bg: linear-gradient(180deg, rgba(7, 10, 12, 0.98), rgba(14, 18, 20, 0.96));
+  --console-ink: #f1f6f7;
 }
 
 * {
@@ -36,8 +64,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(20, 20, 20, 0.09) 1px, transparent 1px),
-    linear-gradient(rgba(20, 20, 20, 0.09) 1px, transparent 1px);
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(var(--grid-line) 1px, transparent 1px);
   background-size: min(14vw, 160px) min(14vw, 160px);
   pointer-events: none;
   opacity: 0.58;
@@ -47,9 +75,9 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.72), transparent 24%),
-    radial-gradient(circle at 84% 14%, rgba(249, 115, 22, 0.16), transparent 22%),
-    radial-gradient(circle at 72% 78%, rgba(20, 20, 20, 0.08), transparent 24%);
+    radial-gradient(circle at 20% 18%, var(--spot-a), transparent 24%),
+    radial-gradient(circle at 84% 14%, var(--spot-b), transparent 22%),
+    radial-gradient(circle at 72% 78%, var(--spot-c), transparent 24%);
   pointer-events: none;
 }
 
@@ -78,8 +106,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(20, 20, 20, 0.12) 1px, transparent 1px),
-    linear-gradient(rgba(20, 20, 20, 0.12) 1px, transparent 1px);
+    linear-gradient(90deg, var(--frame-grid-line) 1px, transparent 1px),
+    linear-gradient(var(--frame-grid-line) 1px, transparent 1px);
   background-size: min(12vw, 180px) min(12vw, 180px);
   pointer-events: none;
 }
@@ -142,6 +170,37 @@ a {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.rail-actions-wide {
+  justify-content: flex-end;
+}
+
+.control-stack {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.control-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.66);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.control-pill select {
+  min-width: 78px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 0.78rem;
 }
 
 .micro-link {
@@ -506,8 +565,8 @@ textarea {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(35, 35, 35, 0.96));
-  color: #f7f2e9;
+  background: var(--console-bg);
+  color: var(--console-ink);
   white-space: pre-wrap;
   word-break: break-word;
   font: 400 0.88rem/1.75 "IBM Plex Mono", monospace;
@@ -559,6 +618,10 @@ textarea {
   .toolbar-row,
   .module {
     padding: 16px;
+  }
+
+  .control-stack {
+    width: 100%;
   }
 
   .form-grid {
